@@ -56,8 +56,8 @@ exit;*/
 
 
 
-/*//  4.        Создание нового пользователя
-$data = array('user_id' => $user_id, 'auth_key' => $auth_key, 'act' => 'create_user', 
+//  4.        Создание нового пользователя
+/*$data = array('user_id' => $user_id, 'auth_key' => $auth_key, 'act' => 'create_user', 
 'user_data' => array(
 		'user_id' => 'new user_id',
 		'auth_key' => 'new auth key'
