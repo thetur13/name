@@ -247,8 +247,8 @@ function add_task()
 			load_tasks();
 		}, error: function()
 		{
-			swal('Добавление заданий оффлайн не работает :(', 'stringify не хотела корректно работать(', 'error');
-			return;
+			//swal('Добавление заданий оффлайн не работает :(', 'stringify не хотела корректно работать(', 'error');
+			//return;
 			localStorage['offline'] = 1;
 			$('#offline').html('<h2>Соединение с сервером потеряно, данные сохраняются локально</h2>');
 			var data = json_decode(localStorage['tasks']);
@@ -263,22 +263,14 @@ function add_task()
 			task['time_add'] = get_date();
 			data.push(task);
 			
-			task = {};
-			
 			for (k in data)
 			{
 				newdata.push(data[k]);
 				
 			}
-//			newdata.push(task);
-			alert(print_r(newdata));
-			alert(JSON.stringify(newdata));
-				return;
-			alert(print_r(data));
-			
-			//localStorage['tasks'] = JSON.stringify(data);
-			alert(print_r(data));
-			alert(JSON.stringify(data));
+			localStorage['tasks'] = JSON.stringify(data);
+			load_tasks();
+			//alert(JSON.stringify(data));
 			// !@#$%^&
 		}
 	});
